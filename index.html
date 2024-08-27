@@ -10,23 +10,23 @@
 
   <script>
     TrelloPowerUp.initialize({
-      // "card-buttons": function (t, opts) {
-      //   return [{
-      //     icon: "",
-      //     text: "Days",
-      //     callback: function (t) {
-      //       return t.card("all").then(card => alert(JSON.stringify(card, null, 2)))
-      //       // return t.card("all").then(card => {
-      //       //   const date = new Date(1000 * parseInt(card.id.substring(0, 8), 16));
-      //       //   const created = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
-      //       //   const now = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;
-      //       //   const days = dateDiff(parseDate(created), parseDate(now));
+      "card-buttons": function (t, opts) {
+        return [{
+          icon: "",
+          text: "Card --> JSON",
+          callback: function (t) {
+            return t.card("all").then(card => alert(JSON.stringify(card, null, 2)))
+            // return t.card("all").then(card => {
+            //   const date = new Date(1000 * parseInt(card.id.substring(0, 8), 16));
+            //   const created = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
+            //   const now = `${new Date().getMonth() + 1}/${new Date().getDate()}/${new Date().getFullYear()}`;
+            //   const days = dateDiff(parseDate(created), parseDate(now));
 
-      //       //   alert(time);
-      //       // })
-      //     }
-      //   }]
-      // },
+            //   alert(time);
+            // })
+          }
+        }]
+      },
       'list-sorters': function (t) {
         return t.list('name', 'id')
           .then(function (list) {
