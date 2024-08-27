@@ -57,6 +57,11 @@
                       return -1;
                     } else if (a.labels.some(label => label.name === "Completed") && b.labels.some(label => label.name === "Completed")) {
                       // both contain Completed
+                      if (a.labels.some(label => label.name === "Needs Testing") && !b.labels.some(label => label.name === "Needs Testing")) {
+                        return -1;
+                      } else if (b.labels.some(label => label.name === "Needs Testing") && !a.labels.some(label => label.name === "Needs Testing")) {
+                        return 1;
+                      }
                     }
 
                     if (a.labels.length > 0 && b.labels.length === 0) {
